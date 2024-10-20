@@ -1,0 +1,3 @@
+[submodule "BTDScripts"]
+	path = BTDScripts
+	url = https://github.com/Bytes-The-Dust-LLC/BTDScripts.git

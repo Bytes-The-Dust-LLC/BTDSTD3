@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Venders">
+      <UniqueIdentifier>{DC2768D3-4807-E76E-511F-7245BD7D4DD0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Venders\VKBootstrap">
+      <UniqueIdentifier>{6A1F8CC8-D680-69D6-5FEE-AF88CB4EA095}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Venders\VKBootstrap\src">
+      <UniqueIdentifier>{81821D67-EDB9-65FE-F6C3-C921627A8CF7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Venders\Volk">
+      <UniqueIdentifier>{27004B32-1363-DAD6-BCE8-128DA82AA659}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="includes">
+      <UniqueIdentifier>{1CA10C65-086E-6770-3187-55181DB39CFE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="includes\BTDSTD">
+      <UniqueIdentifier>{D02A9DBF-3CB6-0A84-45C7-8D78B1D16684}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="includes\BTDSTD\Input">
+      <UniqueIdentifier>{CFB6AF4D-3B23-6B48-0417-03A670428DB0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="includes\BTDSTD\Maps">
+      <UniqueIdentifier>{30D116EB-1C60-A0B4-C57E-B4AFB1ECB05A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Venders\VKBootstrap\src\VkBootstrap.h">
+      <Filter>Venders\VKBootstrap\src</Filter>
+    </ClInclude>
+    <ClInclude Include="Venders\VKBootstrap\src\VkBootstrapDispatch.h">
+      <Filter>Venders\VKBootstrap\src</Filter>
+    </ClInclude>
+    <ClInclude Include="Venders\Volk\volk.h">
+      <Filter>Venders\Volk</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\BTDSTD\Input\KeyInput.hpp">
+      <Filter>includes\BTDSTD\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\BTDSTD\Logger.hpp">
+      <Filter>includes\BTDSTD</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\BTDSTD\Maps\IDRegistery.hpp">
+      <Filter>includes\BTDSTD\Maps</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\BTDSTD\Maps\StringIDRegistery.hpp">
+      <Filter>includes\BTDSTD\Maps</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\BTDSTD\Time.hpp">
+      <Filter>includes\BTDSTD</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Venders\VKBootstrap\src\VkBootstrap.cpp">
+      <Filter>Venders\VKBootstrap\src</Filter>
+    </ClCompile>
+    <ClCompile Include="Venders\Volk\volk.c">
+      <Filter>Venders\Volk</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Source.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Time.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

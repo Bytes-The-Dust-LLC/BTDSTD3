@@ -1,9 +1,9 @@
 ---common vars we have to manually define
-SDL_LINK_PATH_DEBUG = ""
-SDL_LINK_PATH_RELEASE = ""
-SDL_LINK_PATH_DIST = ""
+SDL_LINK_PATH_DEBUG = "Venders/SDL/Build/RelWithDebInfo/SDL2.lib"
+SDL_LINK_PATH_RELEASE = "Venders/SDL/Build/Release/SDL2.lib"
+SDL_LINK_PATH_DIST = "Venders/SDL/Build/MinSizeRel/SDL2.lib"
 
-VULKAN_SDK_MANUAL_OVERRIDE = "C:/VulkanSDK/1.3.283.0/Include"
+VULKAN_SDK_MANUAL_OVERRIDE = "C:/VulkanSDK/1.3.296.0/Include"
 
 --searches for a Vulkan SDK on the system and loads it
 
@@ -20,23 +20,22 @@ BTD_INCLUDE = "BTDSTD3/includes"
 
 ---The STD library for Bytes The Dust projects
 project "BTDSTD"
-location ""
 kind "StaticLib"
 language "C++"
 
 files 
 {
 ---base code
-"includes/**.h",
-"src/**.c",
-"includes/**.hpp",
-"src/**.cpp",
+"./includes/**.h",
+"./src/**.c",
+"./includes/**.hpp",
+"./src/**.cpp",
 
-"Venders/VKBootstrap/src/VkBootstrap.cpp",
-"Venders/VKBootstrap/src/VkBootstrap.h",
-"Venders/VKBootstrap/src/VkBootstrapDispatch.h",
-"Venders/Volk/volk.c",
-"Venders/Volk/volk.h",
+"./Venders/VKBootstrap/src/VkBootstrap.cpp",
+"./Venders/VKBootstrap/src/VkBootstrap.h",
+"./Venders/VKBootstrap/src/VkBootstrapDispatch.h",
+"./Venders/Volk/volk.c",
+"./Venders/Volk/volk.h",
 
 }
 

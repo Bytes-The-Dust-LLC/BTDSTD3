@@ -2,7 +2,7 @@
 
 //defines mesh buffers for handling drawing data
 
-#include <Wireframe/vk_types.h>
+#include <BTDSTD/Wireframe/vk_types.h>
 #include <BTDSTD/Maps/IDRegistery.hpp>
 
 namespace Wireframe::MeshBuffers

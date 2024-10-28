@@ -25,8 +25,23 @@
     <Filter Include="includes\BTDSTD\Maps">
       <UniqueIdentifier>{30D116EB-1C60-A0B4-C57E-B4AFB1ECB05A}</UniqueIdentifier>
     </Filter>
+    <Filter Include="includes\BTDSTD\Wireframe">
+      <UniqueIdentifier>{A152A6AE-0D15-DA38-56C5-68C5C2C6B216}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="includes\BTDSTD\Wireframe\Core">
+      <UniqueIdentifier>{99437188-8569-3BEF-6EAF-C0BA5A7460BB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="includes\BTDSTD\Wireframe\Pipeline">
+      <UniqueIdentifier>{E67F384D-D2BB-3BB7-3BCE-53AE2729E4D1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="includes\BTDSTD\Wireframe\Util">
+      <UniqueIdentifier>{8E367B88-7A5C-45EF-63A2-CABA4F676ABB}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src">
       <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Wireframe">
+      <UniqueIdentifier>{3EAB9FE9-AA6B-1B20-73A6-649DDF2560FC}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -54,6 +69,63 @@
     <ClInclude Include="includes\BTDSTD\Time.hpp">
       <Filter>includes\BTDSTD</Filter>
     </ClInclude>
+    <ClInclude Include="includes\BTDSTD\Wireframe\CommandBuffer.hpp">
+      <Filter>includes\BTDSTD\Wireframe</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\BTDSTD\Wireframe\Core\DesktopSwapchain.hpp">
+      <Filter>includes\BTDSTD\Wireframe\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\BTDSTD\Wireframe\Core\DesktopWindow.hpp">
+      <Filter>includes\BTDSTD\Wireframe\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\BTDSTD\Wireframe\Core\GPU.hpp">
+      <Filter>includes\BTDSTD\Wireframe\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\BTDSTD\Wireframe\FrameBuffer.hpp">
+      <Filter>includes\BTDSTD\Wireframe</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\BTDSTD\Wireframe\MeshBuffer.hpp">
+      <Filter>includes\BTDSTD\Wireframe</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\BTDSTD\Wireframe\Pipeline\GraphicsPipeline.hpp">
+      <Filter>includes\BTDSTD\Wireframe\Pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\BTDSTD\Wireframe\Pipeline\PipelineLayout.hpp">
+      <Filter>includes\BTDSTD\Wireframe\Pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\BTDSTD\Wireframe\Pipeline\PipelineSettings.hpp">
+      <Filter>includes\BTDSTD\Wireframe\Pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\BTDSTD\Wireframe\Pipeline\VertexInputDesc.hpp">
+      <Filter>includes\BTDSTD\Wireframe\Pipeline</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\BTDSTD\Wireframe\Renderpass.hpp">
+      <Filter>includes\BTDSTD\Wireframe</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\BTDSTD\Wireframe\Shader.hpp">
+      <Filter>includes\BTDSTD\Wireframe</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\BTDSTD\Wireframe\SyncObjects.hpp">
+      <Filter>includes\BTDSTD\Wireframe</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\BTDSTD\Wireframe\Util\Attachment.hpp">
+      <Filter>includes\BTDSTD\Wireframe\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\BTDSTD\Wireframe\Util\Subpass.hpp">
+      <Filter>includes\BTDSTD\Wireframe\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\BTDSTD\Wireframe\Util\ViewportAndScissorOverload.hpp">
+      <Filter>includes\BTDSTD\Wireframe\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\BTDSTD\Wireframe\vk_initializers.h">
+      <Filter>includes\BTDSTD\Wireframe</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\BTDSTD\Wireframe\vk_mesh.h">
+      <Filter>includes\BTDSTD\Wireframe</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\BTDSTD\Wireframe\vk_types.h">
+      <Filter>includes\BTDSTD\Wireframe</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Venders\VKBootstrap\src\VkBootstrap.cpp">
@@ -67,6 +139,18 @@
     </ClCompile>
     <ClCompile Include="src\Time.cpp">
       <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Wireframe\DesktopWindow.cpp">
+      <Filter>src\Wireframe</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Wireframe\build.cpp">
+      <Filter>src\Wireframe</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Wireframe\vk_initializers.cpp">
+      <Filter>src\Wireframe</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Wireframe\vk_mesh.cpp">
+      <Filter>src\Wireframe</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

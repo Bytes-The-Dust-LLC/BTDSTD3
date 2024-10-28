@@ -78,7 +78,7 @@
       <WarningLevel>Level3</WarningLevel>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <PreprocessorDefinitions>VK_NO_PROTOTYPES;GLM_FORCE_DEPTH_ZERO_TO_ONE;GLM_FORCE_RADIANS;GLM_ENABLE_EXPERIMENTAL;Window_Build;VK_USE_PLATFORM_WIN32_KHR;Desktop_Build;BTD_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>includes;Venders\GLM;Venders\FMT\include;Venders\SDL\include;Venders\VKBootstrap\src;Venders\STB;Venders\Volk;Venders\VMA\include;C:\VulkanSDK\1.3.283.0\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>includes;Venders\GLM;Venders\FMT\include;Venders\SDL\include;Venders\VKBootstrap\src;Venders\STB;Venders\Volk;Venders\VMA\include;C:\VulkanSDK\1.3.296.0\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <MinimalRebuild>false</MinimalRebuild>
@@ -93,7 +93,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalDependencies>.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Venders\SDL\Build\RelWithDebInfo\SDL2.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -102,7 +102,7 @@
       <WarningLevel>Level3</WarningLevel>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <PreprocessorDefinitions>VK_NO_PROTOTYPES;GLM_FORCE_DEPTH_ZERO_TO_ONE;GLM_FORCE_RADIANS;GLM_ENABLE_EXPERIMENTAL;Window_Build;VK_USE_PLATFORM_WIN32_KHR;Desktop_Build;BTD_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>includes;Venders\GLM;Venders\FMT\include;Venders\SDL\include;Venders\VKBootstrap\src;Venders\STB;Venders\Volk;Venders\VMA\include;C:\VulkanSDK\1.3.283.0\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>includes;Venders\GLM;Venders\FMT\include;Venders\SDL\include;Venders\VKBootstrap\src;Venders\STB;Venders\Volk;Venders\VMA\include;C:\VulkanSDK\1.3.296.0\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -120,7 +120,7 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
     <Lib>
-      <AdditionalDependencies>.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Venders\SDL\Build\Release\SDL2.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
@@ -129,7 +129,7 @@
       <WarningLevel>Level3</WarningLevel>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <PreprocessorDefinitions>VK_NO_PROTOTYPES;GLM_FORCE_DEPTH_ZERO_TO_ONE;GLM_FORCE_RADIANS;GLM_ENABLE_EXPERIMENTAL;Window_Build;VK_USE_PLATFORM_WIN32_KHR;Desktop_Build;BTD_DIST;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>includes;Venders\GLM;Venders\FMT\include;Venders\SDL\include;Venders\VKBootstrap\src;Venders\STB;Venders\Volk;Venders\VMA\include;C:\VulkanSDK\1.3.283.0\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>includes;Venders\GLM;Venders\FMT\include;Venders\SDL\include;Venders\VKBootstrap\src;Venders\STB;Venders\Volk;Venders\VMA\include;C:\VulkanSDK\1.3.296.0\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -147,7 +147,7 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
     <Lib>
-      <AdditionalDependencies>.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Venders\SDL\Build\MinSizeRel\SDL2.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -159,12 +159,35 @@
     <ClInclude Include="includes\BTDSTD\Maps\IDRegistery.hpp" />
     <ClInclude Include="includes\BTDSTD\Maps\StringIDRegistery.hpp" />
     <ClInclude Include="includes\BTDSTD\Time.hpp" />
+    <ClInclude Include="includes\BTDSTD\Wireframe\CommandBuffer.hpp" />
+    <ClInclude Include="includes\BTDSTD\Wireframe\Core\DesktopSwapchain.hpp" />
+    <ClInclude Include="includes\BTDSTD\Wireframe\Core\DesktopWindow.hpp" />
+    <ClInclude Include="includes\BTDSTD\Wireframe\Core\GPU.hpp" />
+    <ClInclude Include="includes\BTDSTD\Wireframe\FrameBuffer.hpp" />
+    <ClInclude Include="includes\BTDSTD\Wireframe\MeshBuffer.hpp" />
+    <ClInclude Include="includes\BTDSTD\Wireframe\Pipeline\GraphicsPipeline.hpp" />
+    <ClInclude Include="includes\BTDSTD\Wireframe\Pipeline\PipelineLayout.hpp" />
+    <ClInclude Include="includes\BTDSTD\Wireframe\Pipeline\PipelineSettings.hpp" />
+    <ClInclude Include="includes\BTDSTD\Wireframe\Pipeline\VertexInputDesc.hpp" />
+    <ClInclude Include="includes\BTDSTD\Wireframe\Renderpass.hpp" />
+    <ClInclude Include="includes\BTDSTD\Wireframe\Shader.hpp" />
+    <ClInclude Include="includes\BTDSTD\Wireframe\SyncObjects.hpp" />
+    <ClInclude Include="includes\BTDSTD\Wireframe\Util\Attachment.hpp" />
+    <ClInclude Include="includes\BTDSTD\Wireframe\Util\Subpass.hpp" />
+    <ClInclude Include="includes\BTDSTD\Wireframe\Util\ViewportAndScissorOverload.hpp" />
+    <ClInclude Include="includes\BTDSTD\Wireframe\vk_initializers.h" />
+    <ClInclude Include="includes\BTDSTD\Wireframe\vk_mesh.h" />
+    <ClInclude Include="includes\BTDSTD\Wireframe\vk_types.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Venders\VKBootstrap\src\VkBootstrap.cpp" />
     <ClCompile Include="Venders\Volk\volk.c" />
     <ClCompile Include="src\Source.cpp" />
     <ClCompile Include="src\Time.cpp" />
+    <ClCompile Include="src\Wireframe\DesktopWindow.cpp" />
+    <ClCompile Include="src\Wireframe\build.cpp" />
+    <ClCompile Include="src\Wireframe\vk_initializers.cpp" />
+    <ClCompile Include="src\Wireframe\vk_mesh.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -2,10 +2,10 @@
 
 //defines a graphics pipeline
 
-#include <Wireframe/Pipeline/PipelineSettings.hpp>
-#include <Wireframe/Pipeline/PipelineLayout.hpp>
+#include <BTDSTD/Wireframe/Pipeline/PipelineSettings.hpp>
+#include <BTDSTD/Wireframe/Pipeline/PipelineLayout.hpp>
 
-#include <Wireframe/Util/ViewportAndScissorOverload.hpp>
+#include <BTDSTD/Wireframe/Util/ViewportAndScissorOverload.hpp>
 
 namespace Wireframe::Pipeline
 {

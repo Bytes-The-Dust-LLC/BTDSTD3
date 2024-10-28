@@ -2,7 +2,7 @@
 
 //defines pipeline settings
 
-#include <Wireframe/Shader.hpp>
+#include <BTDSTD/Wireframe/Shader.hpp>
 #include <vector>
 
 namespace Wireframe::Pipeline

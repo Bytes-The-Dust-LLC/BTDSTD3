@@ -2,7 +2,7 @@
 
 //manages frame buffers
 
-#include <Wireframe/Core/GPU.hpp>
+#include <BTDSTD/Wireframe/Core/GPU.hpp>
 
 namespace Wireframe::FrameBuffer
 {

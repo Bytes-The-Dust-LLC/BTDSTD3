@@ -151,6 +151,7 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="includes\BTDSTD\ECS\ECSManager.hpp" />
     <ClInclude Include="Venders\VKBootstrap\src\VkBootstrap.h" />
     <ClInclude Include="Venders\VKBootstrap\src\VkBootstrapDispatch.h" />
     <ClInclude Include="Venders\Volk\volk.h" />

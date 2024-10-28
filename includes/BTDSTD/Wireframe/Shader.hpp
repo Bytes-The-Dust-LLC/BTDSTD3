@@ -4,7 +4,7 @@
 
 #include <BTDSTD/Logger.hpp>
 
-#include <Wireframe/Core/GPU.hpp>
+#include <BTDSTD/Wireframe/Core/GPU.hpp>
 
 #include <fstream>
 #include <vector>

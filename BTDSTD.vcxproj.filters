@@ -126,6 +126,7 @@
     <ClInclude Include="includes\BTDSTD\Wireframe\vk_types.h">
       <Filter>includes\BTDSTD\Wireframe</Filter>
     </ClInclude>
+    <ClInclude Include="includes\BTDSTD\ECS\ECSManager.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Venders\VKBootstrap\src\VkBootstrap.cpp">

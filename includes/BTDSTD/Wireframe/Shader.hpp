@@ -5,6 +5,7 @@
 #include <BTDSTD/Logger.hpp>
 
 #include <BTDSTD/Wireframe/Core/GPU.hpp>
+#include <BTDSTD/Wireframe/Util/ShaderStages.hpp>
 
 #include <fstream>
 #include <vector>
@@ -71,37 +72,54 @@ namespace Wireframe::Shader
 		}
 	};
 
+	//generates a shader stage info for a pipeline
+	inline VkPipelineShaderStageCreateInfo GenerateShaderStageInfoForPipeline(const ShaderModule& shader, const Util::ShaderStage& stage, const char* entryPointFuncName = "main")
+	{
+		VkPipelineShaderStageCreateInfo info{};
+		info.sType = VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO;
+		info.pNext = nullptr;
+
+		//shader stage
+		info.stage = (VkShaderStageFlagBits)stage;
+		//module containing the code for this shader stage
+		info.module = shader.shaderModule;
+		//the entry point of the shader
+		info.pName = entryPointFuncName;
+
+		return info;
+	}
+
 	//generates a vertex shader stage
-	static inline VkPipelineShaderStageCreateInfo GenerateVertexShaderStage(const ShaderModule& shader, const char* entryPointFuncName = "main")
-	{
-		VkPipelineShaderStageCreateInfo info{};
-		info.sType = VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO;
-		info.pNext = nullptr;
+	//static inline VkPipelineShaderStageCreateInfo GenerateVertexShaderStage(const ShaderModule& shader, const char* entryPointFuncName = "main")
+	//{
+	//	VkPipelineShaderStageCreateInfo info{};
+	//	info.sType = VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO;
+	//	info.pNext = nullptr;
 
-		//shader stage
-		info.stage = VK_SHADER_STAGE_VERTEX_BIT;
-		//module containing the code for this shader stage
-		info.module = shader.shaderModule;
-		//the entry point of the shader
-		info.pName = entryPointFuncName;
+	//	//shader stage
+	//	info.stage = VK_SHADER_STAGE_VERTEX_BIT;
+	//	//module containing the code for this shader stage
+	//	info.module = shader.shaderModule;
+	//	//the entry point of the shader
+	//	info.pName = entryPointFuncName;
 
-		return info;
-	}
+	//	return info;
+	//}
 
-	//generates a fragment shader stage
-	static inline VkPipelineShaderStageCreateInfo GenerateFragmentShaderStage(const ShaderModule& shader, const char* entryPointFuncName = "main")
-	{
-		VkPipelineShaderStageCreateInfo info{};
-		info.sType = VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO;
-		info.pNext = nullptr;
+	////generates a fragment shader stage
+	//static inline VkPipelineShaderStageCreateInfo GenerateFragmentShaderStage(const ShaderModule& shader, const char* entryPointFuncName = "main")
+	//{
+	//	VkPipelineShaderStageCreateInfo info{};
+	//	info.sType = VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO;
+	//	info.pNext = nullptr;
 
-		//shader stage
-		info.stage = VK_SHADER_STAGE_FRAGMENT_BIT;
-		//module containing the code for this shader stage
-		info.module = shader.shaderModule;
-		//the entry point of the shader
-		info.pName = entryPointFuncName;
+	//	//shader stage
+	//	info.stage = VK_SHADER_STAGE_FRAGMENT_BIT;
+	//	//module containing the code for this shader stage
+	//	info.module = shader.shaderModule;
+	//	//the entry point of the shader
+	//	info.pName = entryPointFuncName;
 
-		return info;
-	}
+	//	return info;
+	//}
 }

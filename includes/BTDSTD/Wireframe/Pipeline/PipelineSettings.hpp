@@ -150,5 +150,17 @@ namespace Wireframe::Pipeline
 		{
 			_shaderStages = {};
 		}
+
+		//resets the entire pipeline settings to defaults
+		inline void SetPipelineSettingToDefault_All()
+		{
+			SetPipelineSettingToDefault_InputAssemblyState();
+			SetPipelineSettingToDefault_RasterizerState();
+			SetPipelineSettingToDefault_MultisampleState();
+			SetPipelineSettingToDefault_ColorBlendAttachmentState();
+			SetPipelineSettingToDefault_DepthStencilState();
+			SetPipelineSettingToDefault_VertexInputState();
+			SetPipelineSettingToDefault_ShaderStages();
+		}
 	};
 }

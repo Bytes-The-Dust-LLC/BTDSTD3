@@ -27,6 +27,10 @@ bool Wireframe::Window::DesktopWindow::Create(const DesktopWindow_CreateInfo& in
 		return false;
 	}
 
+	//gets the info
+	SDL_VERSION(&systemInfo.version);
+	SDL_GetWindowWMInfo(_window, &systemInfo);
+
 	isRunning = true;
 	return true;
 }

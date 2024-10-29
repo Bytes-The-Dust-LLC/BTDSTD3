@@ -3,7 +3,7 @@
 //defines vertex input description
 
 //#include <vulkan/vulkan.h>
-#include "../Volk/volk.h"
+#include <volk.h>
 #include <vector>
 
 namespace Wireframe::Pipeline

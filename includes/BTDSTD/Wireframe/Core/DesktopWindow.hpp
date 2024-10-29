@@ -2,11 +2,12 @@
 
 //defines a desktop window
 
+#include <BTDSTD/Logger.hpp>
+
 #include <BTDSTD/Wireframe/vk_types.h>
 
 #include <SDL_video.h>
-
-#include <BTDSTD/Logger.hpp>
+#include <SDL_syswm.h>
 
 namespace Wireframe::Window
 {
@@ -25,6 +26,7 @@ namespace Wireframe::Window
 		bool hasBeenResized = false;
 
 		VkExtent2D _windowExtent{ 1700 , 900 };
+		SDL_SysWMinfo systemInfo; //low level system info about the window
 		struct SDL_Window* _window{ nullptr };
 		VkSurfaceKHR _surface;
 

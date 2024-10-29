@@ -151,14 +151,18 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="includes\BTDSTD\ECS\ECSManager.hpp" />
     <ClInclude Include="Venders\VKBootstrap\src\VkBootstrap.h" />
     <ClInclude Include="Venders\VKBootstrap\src\VkBootstrapDispatch.h" />
     <ClInclude Include="Venders\Volk\volk.h" />
+    <ClInclude Include="includes\BTDSTD\ECS\ECSManager.hpp" />
+    <ClInclude Include="includes\BTDSTD\IO\FileDialog.hpp" />
+    <ClInclude Include="includes\BTDSTD\IO\FileErrors.hpp" />
+    <ClInclude Include="includes\BTDSTD\IO\FileInfo.hpp" />
     <ClInclude Include="includes\BTDSTD\Input\KeyInput.hpp" />
     <ClInclude Include="includes\BTDSTD\Logger.hpp" />
     <ClInclude Include="includes\BTDSTD\Maps\IDRegistery.hpp" />
     <ClInclude Include="includes\BTDSTD\Maps\StringIDRegistery.hpp" />
+    <ClInclude Include="includes\BTDSTD\String.hpp" />
     <ClInclude Include="includes\BTDSTD\Time.hpp" />
     <ClInclude Include="includes\BTDSTD\Wireframe\CommandBuffer.hpp" />
     <ClInclude Include="includes\BTDSTD\Wireframe\Core\DesktopSwapchain.hpp" />
@@ -169,11 +173,13 @@
     <ClInclude Include="includes\BTDSTD\Wireframe\Pipeline\GraphicsPipeline.hpp" />
     <ClInclude Include="includes\BTDSTD\Wireframe\Pipeline\PipelineLayout.hpp" />
     <ClInclude Include="includes\BTDSTD\Wireframe\Pipeline\PipelineSettings.hpp" />
+    <ClInclude Include="includes\BTDSTD\Wireframe\Pipeline\ShaderSerilize.hpp" />
     <ClInclude Include="includes\BTDSTD\Wireframe\Pipeline\VertexInputDesc.hpp" />
     <ClInclude Include="includes\BTDSTD\Wireframe\Renderpass.hpp" />
     <ClInclude Include="includes\BTDSTD\Wireframe\Shader.hpp" />
     <ClInclude Include="includes\BTDSTD\Wireframe\SyncObjects.hpp" />
     <ClInclude Include="includes\BTDSTD\Wireframe\Util\Attachment.hpp" />
+    <ClInclude Include="includes\BTDSTD\Wireframe\Util\ShaderStages.hpp" />
     <ClInclude Include="includes\BTDSTD\Wireframe\Util\Subpass.hpp" />
     <ClInclude Include="includes\BTDSTD\Wireframe\Util\ViewportAndScissorOverload.hpp" />
     <ClInclude Include="includes\BTDSTD\Wireframe\vk_initializers.h" />
@@ -183,6 +189,7 @@
   <ItemGroup>
     <ClCompile Include="Venders\VKBootstrap\src\VkBootstrap.cpp" />
     <ClCompile Include="Venders\Volk\volk.c" />
+    <ClCompile Include="src\Platform\Windows\FileDialog.cpp" />
     <ClCompile Include="src\Source.cpp" />
     <ClCompile Include="src\Time.cpp" />
     <ClCompile Include="src\Wireframe\DesktopWindow.cpp" />

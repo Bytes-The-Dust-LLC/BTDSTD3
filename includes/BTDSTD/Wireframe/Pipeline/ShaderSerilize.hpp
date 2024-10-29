@@ -5,6 +5,7 @@
 #include <BTDSTD/IO/FileInfo.hpp>
 #include <BTDSTD/Wireframe/Util/ShaderStages.hpp>
 
+#include <BTDSTD/Formats/json.hpp>
 #include <string>
 
 namespace Wireframe::Shader::Serilize

@@ -155,6 +155,7 @@
     <ClInclude Include="Venders\VKBootstrap\src\VkBootstrapDispatch.h" />
     <ClInclude Include="Venders\Volk\volk.h" />
     <ClInclude Include="includes\BTDSTD\ECS\ECSManager.hpp" />
+    <ClInclude Include="includes\BTDSTD\Formats\json.hpp" />
     <ClInclude Include="includes\BTDSTD\IO\FileDialog.hpp" />
     <ClInclude Include="includes\BTDSTD\IO\FileErrors.hpp" />
     <ClInclude Include="includes\BTDSTD\IO\FileInfo.hpp" />

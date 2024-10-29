@@ -22,6 +22,9 @@
     <Filter Include="includes\BTDSTD\ECS">
       <UniqueIdentifier>{1A07F14C-8668-CE5A-0FD6-140D7B36051A}</UniqueIdentifier>
     </Filter>
+    <Filter Include="includes\BTDSTD\Formats">
+      <UniqueIdentifier>{7BA5FE93-E7DC-462B-F0E6-AA4E5C9D6D24}</UniqueIdentifier>
+    </Filter>
     <Filter Include="includes\BTDSTD\IO">
       <UniqueIdentifier>{77CAF78D-63AE-B8E3-CC0E-B336B811A365}</UniqueIdentifier>
     </Filter>
@@ -68,6 +71,9 @@
     </ClInclude>
     <ClInclude Include="includes\BTDSTD\ECS\ECSManager.hpp">
       <Filter>includes\BTDSTD\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\BTDSTD\Formats\json.hpp">
+      <Filter>includes\BTDSTD\Formats</Filter>
     </ClInclude>
     <ClInclude Include="includes\BTDSTD\IO\FileDialog.hpp">
       <Filter>includes\BTDSTD\IO</Filter>

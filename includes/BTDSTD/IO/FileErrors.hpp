@@ -9,7 +9,9 @@ namespace BTD::IO
 	{
 		FileAlreadyExists = 0, //the file already exists
 
-		//the file does not exist
+		FileDoesNotExist, //the file does not exist
+
+		FileIsNotOpen, //the file is not open
 
 		//the file is in use by another process
 
@@ -18,4 +20,19 @@ namespace BTD::IO
 	};
 
 	//returns a string variant of the enum
+
+	//defines a data pair for a operation returning a file error
+	template<typename T = size_t>
+	struct FileError_DataPair
+	{
+		FileError error = FileError::None;
+		T data;
+
+		FileError_DataPair() {}
+		FileError_DataPair(const FileError& e, const T& d)
+		{
+			error = e;
+			data = d;
+		}
+	};
 }

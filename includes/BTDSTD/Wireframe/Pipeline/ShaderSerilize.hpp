@@ -2,7 +2,7 @@
 
 //handles writing and reading data files describing the shader settings
 
-#include <BTDSTD/IO/FileInfo.hpp>
+#include <BTDSTD/IO/File.hpp>
 #include <BTDSTD/Wireframe/Util/ShaderStages.hpp>
 
 #include <BTDSTD/Formats/json.hpp>
@@ -41,8 +41,21 @@ namespace Wireframe::Shader::Serilize
 		}
 
 		//build JSON object
+		nlohmann::json j;
 
-		//write to file ending in .btdshaderSettings
+		//if we're in not in production
+		if (!isProductionBuild)
+		{
+			j["name"] = data.name;
+			j["sourceFP"] = data.sourceFilepath;
+		}
+
+		j["binaryFP"] = data.binaryFilepath;
+		j["entryFunc"] = data.entryPointFuncName;
+		j["stage"] = (uint8_t)data.stage;
+
+		//write to file
+		BTD::IO::File::WriteWholeTextFile(settingsFile, j.dump());
 
 		return true;
 	}
@@ -58,9 +71,9 @@ namespace Wireframe::Shader::Serilize
 			return false;
 		}
 
-		//load from a file ending in .btdshaderSettings
-
 		//parse JSON object
+		nlohmann::json j = nlohmann::json::parse(BTD::IO::File::ReadWholeTextFile(settingsFile).data);
+		fmt::print("{}\n", j.dump());
 
 		return true;
 	}

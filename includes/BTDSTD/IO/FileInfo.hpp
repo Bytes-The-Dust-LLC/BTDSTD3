@@ -50,23 +50,5 @@ namespace BTD::IO
 
 		//returns if the file exists
 		inline bool Exists() const { return std::filesystem::exists(absolutePath); }
-
-		//creates the file
-		inline FileError Create(bool nukeIfAlreadyExists)
-		{
-			//checks if it already exits
-			if (Exists() && !nukeIfAlreadyExists)
-			{
-				fmt::print("BTD IO Error: File Info || Create || File already exists at \"{}\". If you wish to create one regardless, pass true into \"nukeIfAlreadyExists\".\n",
-					absolutePath);
-				return FileError::FileAlreadyExists;
-			}
-
-			//creates a file
-
-			return FileError::None;
-		}
-
-		//deletes the file
 	};
 }

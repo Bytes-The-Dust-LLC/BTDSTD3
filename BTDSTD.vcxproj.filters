@@ -165,6 +165,7 @@
     <ClInclude Include="includes\BTDSTD\Wireframe\vk_types.h">
       <Filter>includes\BTDSTD\Wireframe</Filter>
     </ClInclude>
+    <ClInclude Include="includes\BTDSTD\IO\File.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Venders\VKBootstrap\src\VkBootstrap.cpp">

@@ -63,9 +63,10 @@ namespace Wireframe::Shader::Serilize
 	};
 
 	//writes shader settings to a file || if isProductionBuild is true, will not write debug data
-	inline bool WriteShaderDataToFile(BTD::IO::FileInfo& settingsFile, const ShaderSerilizeData& data, const bool isProductionBuild)
+	inline bool WriteShaderDataToFile(const BTD::IO::FileInfo& settingsFile, const ShaderSerilizeData& data, const bool isProductionBuild)
 	{
 		//checks if the file has the right extension, if not throw a warning and add it ourself
+		BTD::IO::FileInfo f = settingsFile;
 		if (settingsFile.extension != ShaderSerilizeData::GetExtentionStr())
 		{
 			fmt::print("Wireframe Shader Warning: Serilize || WriteShaderDataToFile || \"{}\" does not end in .{}, this is the file extension for Wireframe Shader Setting files. This warning can be ignored as we will add the extension. But to make it go away, add it to your file. The ShaderSerilizeData struct contains a static funtion for getting the correct file extension.\n",
@@ -73,13 +74,13 @@ namespace Wireframe::Shader::Serilize
 			
 			//if we need a period
 			if(settingsFile.absolutePath[settingsFile.absolutePath.size() - 1] != '.')
-				settingsFile = BTD::IO::FileInfo(settingsFile.absolutePath + "." + ShaderSerilizeData::GetExtentionStr());
+				f = BTD::IO::FileInfo(settingsFile.absolutePath + "." + ShaderSerilizeData::GetExtentionStr());
 			else
-				settingsFile = BTD::IO::FileInfo(settingsFile.absolutePath + ShaderSerilizeData::GetExtentionStr());
+				f = BTD::IO::FileInfo(settingsFile.absolutePath + ShaderSerilizeData::GetExtentionStr());
 		}
 
 		//build json and write to file
-		BTD::IO::File::WriteWholeTextFile(settingsFile, data.ToJSON(isProductionBuild).dump());
+		BTD::IO::File::WriteWholeTextFile(f, data.ToJSON(isProductionBuild).dump());
 
 		return true;
 	}

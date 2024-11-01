@@ -129,7 +129,7 @@
     <ClInclude Include="includes\BTDSTD\Wireframe\Pipeline\PipelineSettings.hpp">
       <Filter>includes\BTDSTD\Wireframe\Pipeline</Filter>
     </ClInclude>
-    <ClInclude Include="includes\BTDSTD\Wireframe\Pipeline\ShaderSerilize.hpp">
+    <ClInclude Include="includes\BTDSTD\Wireframe\Serilize\ShaderSerilize.hpp">
       <Filter>includes\BTDSTD\Wireframe\Pipeline</Filter>
     </ClInclude>
     <ClInclude Include="includes\BTDSTD\Wireframe\Pipeline\VertexInputDesc.hpp">
@@ -166,6 +166,7 @@
       <Filter>includes\BTDSTD\Wireframe</Filter>
     </ClInclude>
     <ClInclude Include="includes\BTDSTD\IO\File.hpp" />
+    <ClInclude Include="includes\BTDSTD\Wireframe\Serilize\PipelineSettingsSerilize.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Venders\VKBootstrap\src\VkBootstrap.cpp">

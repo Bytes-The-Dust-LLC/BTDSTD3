@@ -152,7 +152,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="includes\BTDSTD\IO\File.hpp" />
-    <ClInclude Include="includes\BTDSTD\Wireframe\Serilize\PipelineSettingsSerilize.hpp" />
     <ClInclude Include="Venders\VKBootstrap\src\VkBootstrap.h" />
     <ClInclude Include="Venders\VKBootstrap\src\VkBootstrapDispatch.h" />
     <ClInclude Include="Venders\Volk\volk.h" />
@@ -176,7 +175,6 @@
     <ClInclude Include="includes\BTDSTD\Wireframe\Pipeline\GraphicsPipeline.hpp" />
     <ClInclude Include="includes\BTDSTD\Wireframe\Pipeline\PipelineLayout.hpp" />
     <ClInclude Include="includes\BTDSTD\Wireframe\Pipeline\PipelineSettings.hpp" />
-    <ClInclude Include="includes\BTDSTD\Wireframe\Serilize\ShaderSerilize.hpp" />
     <ClInclude Include="includes\BTDSTD\Wireframe\Pipeline\VertexInputDesc.hpp" />
     <ClInclude Include="includes\BTDSTD\Wireframe\Renderpass.hpp" />
     <ClInclude Include="includes\BTDSTD\Wireframe\Shader.hpp" />

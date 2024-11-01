@@ -3,16 +3,25 @@
 //defines a pipeline layout
 
 #include <BTDSTD/Wireframe/Core/GPU.hpp>
+#include <BTDSTD/Wireframe/Util/ShaderStages.hpp>
 
 #include <unordered_map>
 
 namespace Wireframe::Pipeline
 {
+	//defines a push constant
+	struct PushConstant
+	{
+		Shader::Util::ShaderStage stage = Shader::Util::ShaderStage::Vertex;
+		uint32_t offset;
+		uint32_t size;
+		std::string name = "";
+	};
+
 	//defines a pipeline layout create info
 	struct PipelineLayout_CreateInfo
 	{
-		std::vector<VkPushConstantRange> pushConstants;
-		std::vector<std::string> pushConstantNames;
+		std::vector<PushConstant> pushConstants;
 	};
 
 	//defines a pipeline layout
@@ -35,12 +44,21 @@ namespace Wireframe::Pipeline
 			info.pSetLayouts = nullptr;
 			
 			const size_t pushConstCount = _info.pushConstants.size();
+			std::vector<VkPushConstantRange> consts; consts.resize(pushConstCount);
 			if (pushConstCount > 0)
 			{
-				info.pushConstantRangeCount = _info.pushConstants.size();
-				info.pPushConstantRanges = _info.pushConstants.data();
 				for (size_t i = 0; i < pushConstCount; ++i)
-					pushConstants[_info.pushConstantNames[i]] = _info.pushConstants[i].size;
+				{
+					consts[i].stageFlags = (VkShaderStageFlags)_info.pushConstants[i].stage;
+					consts[i].size = _info.pushConstants[i].size;
+					consts[i].offset = _info.pushConstants[i].offset;
+
+					pushConstants[_info.pushConstants[i].name] = _info.pushConstants[i].size;
+
+				}
+
+				info.pushConstantRangeCount = pushConstCount;
+				info.pPushConstantRanges = consts.data();					
 			}
 			else
 			{

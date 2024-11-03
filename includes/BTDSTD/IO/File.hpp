@@ -45,15 +45,15 @@ namespace BTD::IO
 			if (f.Exists() && !overwriteIfAlreadyExists && op == FileOp::Text_Write_Create)
 			{
 				fmt::print("BTD IO Error: File || Open || File already exists at \"{}\". If you wish to create/overwrite one regardless, pass true into \"overwriteIfAlreadyExists\".\n",
-					f.absolutePath);
+					f.GetPathStr());
 				return FileError::FileAlreadyExists;
 			}
 
-			file = fopen(f.absolutePath.c_str(), FileOpToStrFlag(op)); // Open file in write mode
+			file = fopen(f.GetPathStr().c_str(), FileOpToStrFlag(op)); // Open file in write mode
 			if (!file)
 			{
 				fmt::print("BTD IO Error: File || Open || Failed to open file at \"{}\".\n",
-					f.absolutePath);
+					f.GetPathStr());
 				return FileError::FileDoesNotExist;
 			}
 
@@ -67,7 +67,7 @@ namespace BTD::IO
 			if (!file)
 			{
 				fmt::print("BTD IO Warning: File || Close || No file is open at \"{}\". No need to close, this is a warning. Remove the function call to stop it.\n",
-					fileInfo.absolutePath);
+					fileInfo.GetPathStr());
 				return FileError::FileIsNotOpen;
 			}
 
@@ -83,7 +83,7 @@ namespace BTD::IO
 			if (!file)
 			{
 				fmt::print("BTD IO Error: File || GetFileLength || No file is open at \"{}\". Can not get length\n",
-					fileInfo.absolutePath);
+					fileInfo.GetPathStr());
 				return { FileError::FileIsNotOpen, 0 };
 			}
 
@@ -99,7 +99,7 @@ namespace BTD::IO
 			if (!file)
 			{
 				fmt::print("BTD IO Error: File || Write || No file is open at \"{}\". Can not write data.\n",
-					fileInfo.absolutePath);
+					fileInfo.GetPathStr());
 				return FileError::FileIsNotOpen;
 			}
 
@@ -114,7 +114,7 @@ namespace BTD::IO
 			if (!file)
 			{
 				fmt::print("BTD IO Error: File || ReadWholeFile || No file is open at \"{}\". Can not read data.\n",
-					fileInfo.absolutePath);
+					fileInfo.GetPathStr());
 				return { FileError::FileIsNotOpen, "" };
 			}
 

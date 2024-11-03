@@ -19,6 +19,9 @@
     <Filter Include="includes\BTDSTD">
       <UniqueIdentifier>{D02A9DBF-3CB6-0A84-45C7-8D78B1D16684}</UniqueIdentifier>
     </Filter>
+    <Filter Include="includes\BTDSTD\Build">
+      <UniqueIdentifier>{EFC2344D-5B2F-F047-2423-88A5904E12B0}</UniqueIdentifier>
+    </Filter>
     <Filter Include="includes\BTDSTD\ECS">
       <UniqueIdentifier>{1A07F14C-8668-CE5A-0FD6-140D7B36051A}</UniqueIdentifier>
     </Filter>
@@ -49,11 +52,17 @@
     <Filter Include="src">
       <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Platform">
-      <UniqueIdentifier>{21CA02E5-0D2D-9289-B6B2-CA3FA2F45D0C}</UniqueIdentifier>
+    <Filter Include="src\Build">
+      <UniqueIdentifier>{0C55A8B2-78BF-5C29-C1FD-0DCF2DA73A7E}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Platform\Windows">
-      <UniqueIdentifier>{5B054582-4794-CE4B-F0B2-E246DC20DFF1}</UniqueIdentifier>
+    <Filter Include="src\IO">
+      <UniqueIdentifier>{B449661C-A0EB-90F2-89A6-A44675E71743}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\IO\Platform">
+      <UniqueIdentifier>{88B0A4E5-F43B-12AA-FD4C-959E69576EAA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\IO\Platform\Windows">
+      <UniqueIdentifier>{C2627E3F-2E9A-C6D6-37A4-2AFAA35AEDCF}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\Wireframe">
       <UniqueIdentifier>{3EAB9FE9-AA6B-1B20-73A6-649DDF2560FC}</UniqueIdentifier>
@@ -69,11 +78,17 @@
     <ClInclude Include="Venders\Volk\volk.h">
       <Filter>Venders\Volk</Filter>
     </ClInclude>
+    <ClInclude Include="includes\BTDSTD\Build\whereami.h">
+      <Filter>includes\BTDSTD\Build</Filter>
+    </ClInclude>
     <ClInclude Include="includes\BTDSTD\ECS\ECSManager.hpp">
       <Filter>includes\BTDSTD\ECS</Filter>
     </ClInclude>
     <ClInclude Include="includes\BTDSTD\Formats\json.hpp">
       <Filter>includes\BTDSTD\Formats</Filter>
+    </ClInclude>
+    <ClInclude Include="includes\BTDSTD\IO\File.hpp">
+      <Filter>includes\BTDSTD\IO</Filter>
     </ClInclude>
     <ClInclude Include="includes\BTDSTD\IO\FileDialog.hpp">
       <Filter>includes\BTDSTD\IO</Filter>
@@ -162,7 +177,6 @@
     <ClInclude Include="includes\BTDSTD\Wireframe\vk_types.h">
       <Filter>includes\BTDSTD\Wireframe</Filter>
     </ClInclude>
-    <ClInclude Include="includes\BTDSTD\IO\File.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Venders\VKBootstrap\src\VkBootstrap.cpp">
@@ -171,8 +185,11 @@
     <ClCompile Include="Venders\Volk\volk.c">
       <Filter>Venders\Volk</Filter>
     </ClCompile>
-    <ClCompile Include="src\Platform\Windows\FileDialog.cpp">
-      <Filter>src\Platform\Windows</Filter>
+    <ClCompile Include="src\Build\whereami.c">
+      <Filter>src\Build</Filter>
+    </ClCompile>
+    <ClCompile Include="src\IO\Platform\Windows\FileDialog.cpp">
+      <Filter>src\IO\Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\Source.cpp">
       <Filter>src</Filter>

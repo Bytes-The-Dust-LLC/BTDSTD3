@@ -151,16 +151,17 @@ namespace Wireframe::Shader::Serilize
 	{
 		//checks if the file has the right extension, if not throw a warning and add it ourself
 		BTD::IO::FileInfo f = settingsFile;
+		const std::string p = settingsFile.GetPathStr();
 		if (settingsFile.extension != ShaderSerilizeData::GetExtentionStr())
 		{
 			fmt::print("Wireframe Shader Warning: Serilize || WriteShaderDataToFile || \"{}\" does not end in .{}, this is the file extension for Wireframe Shader Setting files. This warning can be ignored as we will add the extension. But to make it go away, add it to your file. The ShaderSerilizeData struct contains a static funtion for getting the correct file extension.\n",
-				settingsFile.absolutePath, ShaderSerilizeData::GetExtentionStr());
+				p, ShaderSerilizeData::GetExtentionStr());
 
 			//if we need a period
-			if (settingsFile.absolutePath[settingsFile.absolutePath.size() - 1] != '.')
-				f = BTD::IO::FileInfo(settingsFile.absolutePath + "." + ShaderSerilizeData::GetExtentionStr());
+			if (p[p.size() - 1] != '.')
+				f = BTD::IO::FileInfo(p + "." + ShaderSerilizeData::GetExtentionStr());
 			else
-				f = BTD::IO::FileInfo(settingsFile.absolutePath + ShaderSerilizeData::GetExtentionStr());
+				f = BTD::IO::FileInfo(p + ShaderSerilizeData::GetExtentionStr());
 		}
 
 		//build json and write to file
@@ -176,7 +177,7 @@ namespace Wireframe::Shader::Serilize
 		if (settingsFile.extension != ShaderSerilizeData::GetExtentionStr())
 		{
 			fmt::print("Wireframe Shader Error: Serilize || LoadShaderDataToFile || \"{}\" does not end in .{}, this is the file extension for Wireframe Shader Setting files. We can not proove this is a valid Shader Settings file. Call \"WriteShaderDataToFile\" to generate a proper file. If the file you are loading was made in a earlier version of the STD, please try updating the file with the newest functions.\n",
-				settingsFile.absolutePath, ShaderSerilizeData::GetExtentionStr());
+				settingsFile.GetPathStr(), ShaderSerilizeData::GetExtentionStr());
 			return false;
 		}
 
@@ -185,4 +186,9 @@ namespace Wireframe::Shader::Serilize
 
 		return true;
 	}
+}
+
+namespace Wireframe::IO::Shader
+{
+	//takes in a directory and returns all shader setting files
 }

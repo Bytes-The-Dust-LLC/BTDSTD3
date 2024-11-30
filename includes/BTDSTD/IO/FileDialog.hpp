@@ -4,6 +4,8 @@
 
 #include <BTDSTD/Wireframe/Core/DesktopWindow.hpp>
 
+#include <BTDSTD/Build/tinyfiledialogs.h>
+
 #include <string>
 
 namespace BTD::IO
@@ -11,9 +13,9 @@ namespace BTD::IO
 	//opens a save file dialog
 	std::string SaveFileDialog(char* fileTypeFilter, Wireframe::Window::DesktopWindow* window);
 	
-	//opens a load file dialog
-	std::string OpenFileDialog(char* fileTypeFilter, Wireframe::Window::DesktopWindow* window);
+	//opens a open file dialog
+	std::string OpenFileDialog(const char* windowTitle);
 	
 	//opens a directory select dialog
-	std::string DirectorySelectDialog(const char* fileTypeFilter, Wireframe::Window::DesktopWindow* window);
+	std::string DirectorySelectDialog(const char* windowTitle);
 }

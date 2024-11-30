@@ -154,6 +154,7 @@
     <ClInclude Include="Venders\VKBootstrap\src\VkBootstrap.h" />
     <ClInclude Include="Venders\VKBootstrap\src\VkBootstrapDispatch.h" />
     <ClInclude Include="Venders\Volk\volk.h" />
+    <ClInclude Include="includes\BTDSTD\Build\tinyfiledialogs.h" />
     <ClInclude Include="includes\BTDSTD\Build\whereami.h" />
     <ClInclude Include="includes\BTDSTD\ECS\ECSManager.hpp" />
     <ClInclude Include="includes\BTDSTD\Formats\json.hpp" />
@@ -191,6 +192,7 @@
   <ItemGroup>
     <ClCompile Include="Venders\VKBootstrap\src\VkBootstrap.cpp" />
     <ClCompile Include="Venders\Volk\volk.c" />
+    <ClCompile Include="src\Build\tinyfiledialogs.c" />
     <ClCompile Include="src\Build\whereami.c" />
     <ClCompile Include="src\IO\Platform\Windows\FileDialog.cpp" />
     <ClCompile Include="src\Source.cpp" />

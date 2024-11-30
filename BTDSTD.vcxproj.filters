@@ -78,6 +78,9 @@
     <ClInclude Include="Venders\Volk\volk.h">
       <Filter>Venders\Volk</Filter>
     </ClInclude>
+    <ClInclude Include="includes\BTDSTD\Build\tinyfiledialogs.h">
+      <Filter>includes\BTDSTD\Build</Filter>
+    </ClInclude>
     <ClInclude Include="includes\BTDSTD\Build\whereami.h">
       <Filter>includes\BTDSTD\Build</Filter>
     </ClInclude>
@@ -184,6 +187,9 @@
     </ClCompile>
     <ClCompile Include="Venders\Volk\volk.c">
       <Filter>Venders\Volk</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Build\tinyfiledialogs.c">
+      <Filter>src\Build</Filter>
     </ClCompile>
     <ClCompile Include="src\Build\whereami.c">
       <Filter>src\Build</Filter>

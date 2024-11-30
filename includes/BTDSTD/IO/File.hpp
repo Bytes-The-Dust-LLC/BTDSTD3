@@ -13,6 +13,9 @@ namespace BTD::IO
 	{
 		Text_Write_Create = 0, //creates a text file and opens it for writing
 		Text_Read, //reads a text file
+
+		Binary_Write_Create, //creates a binary file and opens it for writing
+		Binary_Read, //reads as binary data
 	};
 
 	//converts a OP into a string flag
@@ -24,6 +27,12 @@ namespace BTD::IO
 			return "w";
 		case FileOp::Text_Read:
 			return "r";
+
+		case FileOp::Binary_Write_Create:
+			return "wb";
+
+		case FileOp::Binary_Read:
+			return "rb";
 
 		default:
 			fmt::print("BTD IO Error: FileOp || FileOpToStrFlag || a valid FileOp flag was not passed in. Pass a correct one.\n");
@@ -93,23 +102,49 @@ namespace BTD::IO
 			return { FileError::None, fileLength };
 		}
 
-		//writes text into the file
-		inline FileError Write(const std::string& str)
+		//writes data into the file
+		inline FileError WriteData(const void* data, const size_t& memSizeOfElement, const size_t& elementCount)
 		{
 			if (!file)
 			{
-				fmt::print("BTD IO Error: File || Write || No file is open at \"{}\". Can not write data.\n",
+				fmt::print("BTD IO Error: File || WriteData || No file is open at \"{}\". Can not write data.\n",
 					fileInfo.GetPathStr());
 				return FileError::FileIsNotOpen;
 			}
 
-			fwrite(str.data(), sizeof(char), str.size(), file);
+			fwrite(data, memSizeOfElement, elementCount, file);
+
+			return FileError::None;
+		}
+
+		//writes text into the file
+		inline FileError WriteText(const std::string& str)
+		{
+			FileError error = WriteData(str.data(), sizeof(char), str.size());
+			if(error == FileError::FileIsNotOpen)
+				fmt::print("BTD IO Error: File || Write || No file is open at \"{}\". Can not write data.\n",
+					fileInfo.GetPathStr());
+
+			return error;
+		}
+
+		//reads the whole file as a single array
+		inline FileError ReadWholeFile_Data(void* data, const size_t& memSizeOfElement, const size_t& elementCount)
+		{
+			if (!file)
+			{
+				fmt::print("BTD IO Error: File || ReadWholeFile_Data || No file is open at \"{}\". Can not read data.\n",
+					fileInfo.GetPathStr());
+				return FileError::FileIsNotOpen;
+			}
+
+			fread(data, memSizeOfElement, elementCount, file);
 
 			return FileError::None;
 		}
 
 		//reads the whole file as a single string
-		inline FileError_DataPair<std::string> ReadWholeFile()
+		inline FileError_DataPair<std::string> ReadWholeFile_Text()
 		{
 			if (!file)
 			{
@@ -134,9 +169,19 @@ namespace BTD::IO
 		{
 			BTD::IO::File file;
 			file.Open(info, BTD::IO::FileOp::Text_Read, false);
-			FileError_DataPair<std::string> d = file.ReadWholeFile();
+			FileError_DataPair<std::string> d = file.ReadWholeFile_Text();
 			file.Close();
 			return d;
+		}
+
+		//reads a whole data file
+		static inline FileError ReadWholeBinaryFile(const FileInfo& info, void* data, const size_t& memSizeOfElements, const size_t& elementCount)
+		{
+			BTD::IO::File file;
+			file.Open(info, BTD::IO::FileOp::Binary_Read, false);
+			file.ReadWholeFile_Data(data, memSizeOfElements, elementCount);
+			file.Close();
+			return FileError::None;
 		}
 
 		//writes a whole text file
@@ -144,8 +189,25 @@ namespace BTD::IO
 		{
 			BTD::IO::File file;
 			file.Open(info, BTD::IO::FileOp::Text_Write_Create, true);
-			file.Write(str);
+			file.WriteText(str);
+			file.Close();
+		}
+
+		//writes a whole binary file
+		static inline FileError WriteWholeBinaryFile(const FileInfo& info, const void* data, const size_t& memSizeOfElement, const size_t& elementCount)
+		{
+			BTD::IO::File file;
+			file.Open(info, BTD::IO::FileOp::Binary_Write_Create, true);
+			file.WriteData(data, memSizeOfElement, elementCount);
 			file.Close();
 		}
 	};
+
+	//creates a file and writes data into it
+
+	//writes a whole array to a file
+
+	//writes a whole string of text to a file
+
+	//defines a text file
 }

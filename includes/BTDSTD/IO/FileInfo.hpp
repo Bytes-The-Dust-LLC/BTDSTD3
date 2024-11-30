@@ -43,9 +43,8 @@ namespace BTD::IO
 			extension = "", //the file extension of this file
 			fullname = ""; //the full name of this extension including any extentions parsed
 
-		FileInfo() {}
-		
-		FileInfo(const std::string& filepath)
+		//updates the full filepath and updates all the internal data
+		inline void SetFullFilePath(const std::string& filepath)
 		{
 			path = std::filesystem::path(filepath);
 
@@ -59,10 +58,30 @@ namespace BTD::IO
 				extension.erase(extension.begin());
 		}
 
+		//Constructor
+		FileInfo() {}
+		
+		//Constructor
+		FileInfo(const std::string& filepath) { SetFullFilePath(filepath); }
+
 		//gets the path string
 		inline std::string GetPathStr() const { return path.string(); }
 
 		//returns if the file exists
 		inline bool Exists() const { return std::filesystem::exists(path); }
+
+		//checks if the file extension of this file, matches the desired one
+		inline bool IsFileExtension(const std::string& desiredExtension) const { return (extension == desiredExtension); }
+
+		//adds a extension to the file path, factors in the . at the end of the file
+		inline void AppendFileExtension(const std::string& newExtension)
+		{
+			//if we need a period
+			const std::string p = GetPathStr();
+			if (p[p.size() - 1] != '.')
+				SetFullFilePath(p + "." + newExtension);
+			else
+				SetFullFilePath(p + newExtension);
+		}
 	};
 }

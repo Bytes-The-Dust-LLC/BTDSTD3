@@ -317,17 +317,12 @@ namespace Wireframe::Pipeline::Serilize
 	{
 		//checks if the file has the right extension, if not throw a warning and add it ourself
 		BTD::IO::FileInfo f = settingsFile;
-		const std::string p = settingsFile.GetPathStr();
-		if (settingsFile.extension != GetPipelineSettingExtentionStr())
+		if(!f.IsFileExtension(GetPipelineSettingExtentionStr()))
 		{
 			fmt::print("Wireframe Pipeline Settings Warning: Serilize || WritePipelineSettingsDataToFile || \"{}\" does not end in .{}, this is the file extension for Wireframe Pipeline Setting files. This warning can be ignored as we will add the extension. But to make it go away, add it to your file. The PipelineSettings header file contains a static funtion for getting the correct file extension.\n",
-				p, GetPipelineSettingExtentionStr());
+				f.GetPathStr(), GetPipelineSettingExtentionStr());
 
-			//if we need a period
-			if (p[p.size() - 1] != '.')
-				f = BTD::IO::FileInfo(p + "." + GetPipelineSettingExtentionStr());
-			else
-				f = BTD::IO::FileInfo(p + GetPipelineSettingExtentionStr());
+			f.AppendFileExtension(GetPipelineSettingExtentionStr());
 		}
 
 		//build json and write to file
@@ -345,7 +340,7 @@ namespace Wireframe::Pipeline::Serilize
 	inline bool LoadPipelineSettingsDataFromFile(const BTD::IO::FileInfo& settingsFile, PipelineSettings& data)
 	{
 		//checks if the file has the right extension, if not error out
-		if (settingsFile.extension != GetPipelineSettingExtentionStr())
+		if(!settingsFile.IsFileExtension(GetPipelineSettingExtentionStr()))
 		{
 			fmt::print("Wireframe Pipeline Settings Error: Serilize || LoadPipelineSettingsDataFromFile || \"{}\" does not end in .{}, this is the file extension for Wireframe Pipeline Setting files. We can not proove this is a valid Pipeline Settings file. Call \"WritePipelineSettingsDataFromFile\" to generate a proper file. If the file you are loading was made in a earlier version of the STD, please try updating the file with the newest functions.\n",
 				settingsFile.GetPathStr(), GetPipelineSettingExtentionStr());

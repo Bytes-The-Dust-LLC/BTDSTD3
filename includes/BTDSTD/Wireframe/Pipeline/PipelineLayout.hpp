@@ -125,17 +125,12 @@ namespace Wireframe::Pipeline::Serilize
 	{
 		//checks if the file has the right extension, if not throw a warning and add it ourself
 		BTD::IO::FileInfo f = settingsFile;
-		const std::string p = settingsFile.GetPathStr();
-		if (settingsFile.extension != PushConstant::GetExtentionStr())
+		if(!f.IsFileExtension(PushConstant::GetExtentionStr()))
 		{
 			fmt::print("Wireframe Pipeline Warning: Serilize || WritePipelineLayoutPushConstantDataToFile || \"{}\" does not end in .{}, this is the file extension for Wireframe Pipeline Layout Push Constant Setting files. This warning can be ignored as we will add the extension. But to make it go away, add it to your file. The PushConstant struct contains a static funtion for getting the correct file extension.\n",
-				p, PushConstant::GetExtentionStr());
+				f.GetPathStr(), PushConstant::GetExtentionStr());
 
-			//if we need a period
-			if (p[p.size() - 1] != '.')
-				f = BTD::IO::FileInfo(p + "." + PushConstant::GetExtentionStr());
-			else
-				f = BTD::IO::FileInfo(p + PushConstant::GetExtentionStr());
+			f.AppendFileExtension(PushConstant::GetExtentionStr());
 		}
 
 		//build json and write to file
@@ -148,7 +143,7 @@ namespace Wireframe::Pipeline::Serilize
 	inline bool LoadPipelineLayoutPushConstantDataFromFile(const BTD::IO::FileInfo& settingsFile, PushConstant& data)
 	{
 		//checks if the file has the right extension, if not error out
-		if (settingsFile.extension != PushConstant::GetExtentionStr())
+		if (!settingsFile.IsFileExtension(PushConstant::GetExtentionStr()))
 		{
 			fmt::print("Wireframe Shader Error: Serilize || LoadPipelineLayoutPushConstantDataToFile || \"{}\" does not end in .{}, this is the file extension for Wireframe Pipeline Layout Push Constant Setting files. We can not proove this is a valid Pipeline Layout Push Constant Settings file. Call \"WritePipelineLayoutPushConstantDataToFile\" to generate a proper file. If the file you are loading was made in a earlier version of the STD, please try updating the file with the newest functions.\n",
 				settingsFile.GetPathStr(), PushConstant::GetExtentionStr());
